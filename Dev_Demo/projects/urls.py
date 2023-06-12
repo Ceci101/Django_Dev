@@ -11,5 +11,5 @@ urlpatterns = [
     # path('delete/', views.delete_project),
 
     # path('projects/', views.projects),
-    path('projects/<int:pk>/', views.ProjectsView.as_view()),
+    path('<int:pk>/', views.ProjectsView.as_view()),
 ]

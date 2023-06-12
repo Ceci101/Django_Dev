@@ -15,6 +15,7 @@ class Projects(models.Model):
     # CharField必须制定max_length参数；
     # verbose_name，help_text：提示信息
     # 如果需要给一个字段添加唯一约束，unique=True，默认为False
+    # 在一个模型类中，仅能为一个字段指定primary_key=True，一旦指定了那么ORM框架就不会自动创建名称为id的主键
     # id = models.IntegerField(auto_created=True, primary_key=True, verbose_name='项目id', help_text='项目id')
     name = models.CharField(max_length=20, verbose_name='项目名称', help_text='项目名称',
                             unique=True, db_column='projects_name')
@@ -34,4 +35,6 @@ class Projects(models.Model):
         # 可以在任意一个模型类中创建一个Meta内部类，用于修改数据库的源数据信息
         # 指定数据库名
         db_table = 'tb_projects'
+        verbose_name = '项目表'
+        verbose_name_plural = '项目表'
 

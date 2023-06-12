@@ -31,5 +31,5 @@ urlpatterns = [
     # re_path(r'^projects/(?P<pk>\w{3})/$', views.get_projects),
     # path('projects/<int:pk>/', views.get_projects),
 
-    path('', include('projects.urls')),
+    path('projects/', include('projects.urls')),
 ]
